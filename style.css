@@ -1,0 +1,23 @@
+:root{
+    --color-primary: #0d6efd;
+    font-family: system-ui, sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+header{
+    padding: 1rem;
+    color: white;
+    background-color: var(--color-primary);
+}
+footer{
+    padding: 1rem;
+    text-align: center;
+}
