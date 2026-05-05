@@ -9,7 +9,7 @@
    <body>
       <header>
          <h1>My Book Library</h1>
-         <a href="" id="addBookBtn" class="button">+</a>
+         <button href="" id="addBookBtn" class="button">+</button>
       </header>
       <main>
          <div class="app">
@@ -21,6 +21,45 @@
                <span class="book-pages">136 Pages</span>
             </div>
          </div>
+         <form action="" id="addBookForm">
+            <div>
+               <label for="bookName">Book Name</label>
+               <input
+                  type="text"
+                  name="bookName"
+                  id="bookNameInput"
+                  placeholder="Harry Potter"
+               />
+            </div>
+            <div>
+               <label for="bookAuthor">Written by:</label>
+               <input
+                  type="text"
+                  name="bookAuthor"
+                  id="bookAuthorInput"
+                  placeholder="J.K. Rowling"
+                  required
+               />
+            </div>
+            <div>
+               <label for="bookPages"># of Pages</label>
+               <input
+                  type="number"
+                  name="bookPages"
+                  id="bookPagesInput"
+                  placeholder="223"
+                  required
+               />
+            </div>
+            <div>
+               <label for="bookRead">Have you read this?</label>
+               <select name="bookRead" id="bookReadInput" required>
+                  <option value="read">Yes</option>
+                  <option value="unread">No</option>
+               </select>
+            </div>
+            <input id="submitBtn" type="submit" value="Add Book"></input>
+         </form>
       </main>
       <footer>Written by <a href="https://tmsbkn.ca">Tomas Buchan</a></footer>
       <script src="main.js"></script>
