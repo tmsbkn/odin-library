@@ -97,7 +97,7 @@ function buildDeleteButtons() {
 
 function changeStatus(id) {
    let bookToUpdate = myLibrary.findIndex((obj) => {
-      return (obj.bookID = id);
+      return obj.bookID == id;
    });
    if (myLibrary[bookToUpdate].read === 'read') {
       myLibrary[bookToUpdate].read = 'unread';
