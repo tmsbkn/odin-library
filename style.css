@@ -66,6 +66,7 @@ footer{
     background-color: white;
     padding: 1em;
     border-radius: 1em;
+    corner-top-right-shape: invert;
     display: grid;
     gap: 8px;
     position: relative;
@@ -85,19 +86,23 @@ footer{
     background-color: pink;
     color: white;
     transition: 0.5s;
+    text-decoration: none;
 
 }
 .delete:hover{
     background-color: red;
+    scale: 1.1;
 }
 
-.read::before{
-    content: 'Read';
+.book-status.read{
+    background: green;
+}
+.book-status{
     position: absolute;
     font-size: 14px;
     right: 0;
     bottom: 0;
-    background: green;
+    background: lightgray;
     color: white;
     padding: 1px 1em;
     border-radius: 1em 0 1em 0;
