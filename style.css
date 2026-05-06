@@ -28,11 +28,14 @@ header{
 main{
     display: grid;
     position: relative;
-    padding: 1rem;
-    gap: 1rem;
+    grid-template-columns: 1fr auto;
 
 }
+.left-side{
+    padding: 1rem;
+}
 footer{
+    background-color: white;
     padding: 1rem;
     text-align: center;
 }
@@ -71,6 +74,23 @@ footer{
     font-weight: 600;
 }
 
+.delete{
+    position: absolute;
+    font-size: 12px;
+    right: 4px;
+    top: 4px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 100vw;
+    background-color: pink;
+    color: white;
+    transition: 0.5s;
+
+}
+.delete:hover{
+    background-color: red;
+}
+
 .read::before{
     content: 'Read';
     position: absolute;
@@ -85,15 +105,10 @@ footer{
 
 #addBookForm{
     background-color: white;
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 1rem;
+    display: flex;
     flex-direction: column;
-    height: fit-content;
     gap: 1em;
     padding: 1.5em;
-    border-radius: 1em;
     width: min(40ch, 100%);
 }
 form input[type="text"], form input[type='number'], form input[type='submit'], form select{

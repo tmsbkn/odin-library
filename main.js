@@ -29,6 +29,8 @@ function Book(name, author, pages, read) {
    };
 }
 
+buildDeleteButtons();
+
 function buildBookshelf() {
    bookShelf.innerHTML = '';
    myLibrary.forEach((book) => {
@@ -37,6 +39,7 @@ function buildBookshelf() {
       <span class="book-title">${book.name}</span>
       <cite class="book-author">${book.author}</cite>
       <span class="book-pages">${book.pages} Pages</span>
+      <div id="${book.bookID}" class="delete">X</div>
       `;
       if (book.read === 'read') {
          bookNode.classList.add('read');
@@ -44,6 +47,7 @@ function buildBookshelf() {
       bookNode.classList.add('book');
       bookShelf.append(bookNode);
    });
+   buildDeleteButtons();
 }
 
 function addBookToLibrary() {
@@ -64,3 +68,20 @@ submit.addEventListener('submit', (e) => {
    buildBookshelf();
    clearForm();
 });
+
+function deleteBook(id) {
+   let bookToDelete = myLibrary.findIndex((obj) => {
+      return obj.bookID == id;
+   });
+   myLibrary.splice(bookToDelete, 1);
+   buildBookshelf();
+}
+
+function buildDeleteButtons() {
+   var deleteButton = document.querySelectorAll('.delete');
+   deleteButton.forEach((button) => {
+      button.addEventListener('click', (e) => {
+         deleteBook(e.id);
+      });
+   });
+}
