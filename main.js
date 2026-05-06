@@ -29,13 +29,38 @@ function Book(name, author, pages, read) {
    };
 }
 
+function buildBookshelf() {
+   bookShelf.innerHTML = '';
+   myLibrary.forEach((book) => {
+      const bookNode = document.createElement('div');
+      bookNode.innerHTML = `
+      <span class="book-title">${book.name}</span>
+      <cite class="book-author">${book.author}</cite>
+      <span class="book-pages">${book.pages} Pages</span>
+      `;
+      if (book.read === 'read') {
+         bookNode.classList.add('read');
+      }
+      bookNode.classList.add('book');
+      bookShelf.append(bookNode);
+   });
+}
+
 function addBookToLibrary() {
    newBook = new Book(title, author, pages, read);
    myLibrary.push(newBook);
    console.log(myLibrary);
 }
 
+function clearForm() {
+   title.value = '';
+   author.value = '';
+   pages.value = '';
+}
+
 submit.addEventListener('submit', (e) => {
    e.preventDefault();
    addBookToLibrary();
+   buildBookshelf();
+   clearForm();
 });
