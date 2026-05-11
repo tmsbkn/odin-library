@@ -16,17 +16,27 @@ addBookBtn.addEventListener('click', () => {
 
 const submit = document.querySelector('form');
 const bookShelf = document.getElementById('app');
-function Book(name, author, pages, read) {
-   this.bookID = self.crypto.randomUUID();
-   this.name = name.value;
-   this.author = author.value;
-   this.pages = pages.value;
-   this.read = read.value;
-   this.info = function () {
-      console.log(
-         name + ' by ' + author + ', ' + pages + ' pages, ' + read + bookID,
+
+class Book {
+   constructor(name, author, pages, read) {
+      this.bookID = self.crypto.randomUUID();
+      this.name = name.value;
+      this.author = author.value;
+      this.pages = pages.value;
+      this.read = read.value;
+   }
+   info() {
+      return (
+         this.name +
+         ' by ' +
+         this.author +
+         ', ' +
+         this.pages +
+         ' pages, ' +
+         this.read +
+         this.bookID
       );
-   };
+   }
 }
 
 buildDeleteButtons();
